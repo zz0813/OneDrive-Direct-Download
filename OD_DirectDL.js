@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         OneDrive直接下載(按下「複製連結」產生直接下載連結)
+// @name         OneDrive不限速直接下載
 // @namespace    https://github.com/zz0813/OneDrive-Direct-Download/
 // @version      v1.0.0
 // @description  將共用連結轉換成直接下載連結並複製到剪貼簿
