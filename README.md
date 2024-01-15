@@ -1,4 +1,4 @@
-# OneDrive-Direct-Download
+# OneDrive-Direct-Download不限速直接下載
 
 這是一個下載小工具，可以將OneDrive的共用連結轉換成直接下載連結，並複製到剪貼簿。這樣可以方便地分享文件，且不被限速。
 
