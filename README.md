@@ -5,7 +5,7 @@
 ## 如何使用
 
 1. 安裝Tampermonkey擴充功能，支援Chrome, Firefox, Edge等常用瀏覽器。
-2. 點擊[這裡](https://greasyfork.org/zh-TW/scripts/484931-onedrive%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BC%89-%E6%8C%89%E4%B8%8B-%E8%A4%87%E8%A3%BD%E9%80%A3%E7%B5%90-%E7%94%A2%E7%94%9F%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BC%89%E9%80%A3%E7%B5%90)安裝本腳本。
+2. 從[這裡](https://greasyfork.org/zh-TW/scripts/484931-onedrive%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BC%89-%E6%8C%89%E4%B8%8B-%E8%A4%87%E8%A3%BD%E9%80%A3%E7%B5%90-%E7%94%A2%E7%94%9F%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BC%89%E9%80%A3%E7%B5%90)安裝本腳本。
 3. 打開OneDrive，選擇你想要分享的文件，點擊「複製連結」按鈕。
 4. 等待一下會跳出提示框，訊息為「直接下載連結已複製到剪貼簿！......」，剪貼簿中就會有「直接下載連結」。
 5. 貼上到你想要的地方，例如：瀏覽器、下載器、電子郵件，社交媒體，網頁等。
