@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OneDrive直接下載(按下「複製連結」產生直接下載連結)
 // @namespace    https://github.com/zz0813/OneDrive-Direct-Download/
-// @version      1.0
+// @version      v1.0.0
 // @description  將共用連結轉換成直接下載連結並複製到剪貼簿
 // @author       zz0813
 // @match        *://*.sharepoint.com/*
