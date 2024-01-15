@@ -38,7 +38,7 @@
         }
 
         // 使用正則表達式來提取共享連結的部分
-        const reg = /https:\/\/(?<domain>.+sharepoint\.com)\/.*personal\/(?<user>\w+?)\/(?<share>\S+)(?:\?.+$)/;
+        const reg = /https:\/\/(?<domain>.+sharepoint\.com)\/.*personal\/(?<user>\w+?)\/(?<share>\w+)/;
         // const reg = /https:\/\/(.+sharepoint\.com)\/.*personal\/(\w+?)\/(\S+)(?:\?.+$)/
         const matches = shareLink.match(reg);
 
