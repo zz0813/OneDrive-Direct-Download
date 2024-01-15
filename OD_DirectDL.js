@@ -7,6 +7,7 @@
 // @match        *://*.sharepoint.com/*
 // @match        *://onedrive.live.com/*
 // @grant        GM_setClipboard
+// @license GPL-3.0 license
 // ==/UserScript==
 
 (function() {
