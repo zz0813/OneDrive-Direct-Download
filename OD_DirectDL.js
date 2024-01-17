@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         OneDrive不限速直接下載
 // @namespace    https://github.com/zz0813/OneDrive-Direct-Download/
-// @version      v1.0.0
+// @version      v1.0.1
 // @description  將共用連結轉換成直接下載連結並複製到剪貼簿
 // @author       zz0813
-// @match        *://*.sharepoint.com/*
-// @match        *://onedrive.live.com/*
+// @match        *://*/*
 // @grant        GM_setClipboard
 // @license      GPL-3.0 license
 // ==/UserScript==
@@ -13,23 +12,19 @@
 (function() {
     'use strict';
 
-    // 延遲讀取剪貼簿內容
-    function delayedClipboardRead() {
-        setTimeout(async () => {
-            try {
-                const clipboardText = await navigator.clipboard.readText();
-                const directDownloadLink = convertToDirectDownloadLink(clipboardText);
-                if (directDownloadLink) {
-                    // 使用Tampermonkey的GM_setClipboard函數來修改剪貼簿的內容
-                    GM_setClipboard(directDownloadLink, 'text');
-                    alert('直接下載連結已複製到剪貼簿！' + directDownloadLink);
-                    console.log('直接下載連結已複製到剪貼簿：', directDownloadLink);
-                }
-            } catch (error) {
-                alert('無法讀取剪貼簿！' + error);
-                console.error('無法讀取剪貼簿：', error);
+    // 檢查剪貼簿內容是否為 OneDrive 的共享連結
+    function checkClipboardContent() {
+        navigator.clipboard.readText().then(clipboardText => {
+            const directDownloadLink = convertToDirectDownloadLink(clipboardText);
+            if (directDownloadLink) {
+                // 使用Tampermonkey的GM_setClipboard函數來修改剪貼簿的內容
+                GM_setClipboard(directDownloadLink, 'text');
+                alert('直接下載連結已複製到剪貼簿！' + directDownloadLink);
+                console.log('直接下載連結已複製到剪貼簿：', directDownloadLink);
             }
-        }, 1300);
+        }).catch(error => {
+            console.error('無法讀取剪貼簿：', error);
+        });
     }
 
     // 轉換共享連結為直接下載連結的函數
@@ -45,7 +40,7 @@
 
         // 如果沒有匹配到，或者是資料夾連結，則返回null
         if (!matches || shareLink.includes("com/:f:")) {
-            alert('抱歉，直鏈生成僅對單一文件有效！');
+            console.error('抱歉，直鏈生成僅對單一文件有效！');
             return null;
         }
 
@@ -54,11 +49,7 @@
         return `${p1}/personal/${p2}/_layouts/00/download.aspx?share=${p3}`;
     }
 
-    // 監聽「複製連結」按鈕點擊事件
-    document.addEventListener('click', event => {
-        if (event.target.closest('[data-automationid="copyLinkCommand"]')) {
-           delayedClipboardRead();
-        }
-    });
+    // 每隔一秒檢查一次剪貼簿內容
+    setInterval(checkClipboardContent, 1000);
 
 })();
