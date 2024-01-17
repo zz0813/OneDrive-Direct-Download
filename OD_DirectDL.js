@@ -4,7 +4,8 @@
 // @version      v1.0.1
 // @description  將共用連結轉換成直接下載連結並複製到剪貼簿
 // @author       zz0813
-// @match        *://*/*
+// @match        *://*.sharepoint.com/*
+// @match        *://onedrive.live.com/*
 // @grant        GM_setClipboard
 // @license      GPL-3.0 license
 // ==/UserScript==
