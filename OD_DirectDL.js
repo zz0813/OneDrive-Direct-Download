@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OneDrive不限速直接下載
 // @namespace    https://github.com/zz0813/OneDrive-Direct-Download/
-// @version      v1.0.1
+// @version      v1.0.2
 // @description  將共用連結轉換成直接下載連結並複製到剪貼簿
 // @author       zz0813
 // @match        *://*.sharepoint.com/*
@@ -35,7 +35,7 @@
         }
 
         // 使用正則表達式來提取共享連結的部分
-        const reg = /https:\/\/(?<domain>.+sharepoint\.com)\/.*personal\/(?<user>\w+?)\/(?<share>\w+)/;
+        const reg = /https:\/\/(?<domain>.+sharepoint\.com)\/.*personal\/(?<user>\w+?)\/(?<share>[a-zA-Z0-9-_]+)/;
         // const reg = /https:\/\/(.+sharepoint\.com)\/.*personal\/(\w+?)\/(\S+)(?:\?.+$)/
         const matches = shareLink.match(reg);
 
